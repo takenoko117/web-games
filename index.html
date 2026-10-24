@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>takenoko117 Web Games Portal | ブラウザで遊べるゲーム集</title>
-  <meta name="description" content="takenoko117が制作したGitHub Pagesで今すぐ遊べるブラウザゲーム・物理シミュレーターのポータルサイト" />
+  <meta name="description" content="takenoko117が制作したGitHub Pagesで今すぐ遊べるブラウザゲーム・物理シミュレーターのポータルサイト（最新アップデート順）" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-primary: #090b12;
-      --bg-card: rgba(19, 24, 38, 0.85);
-      --bg-card-hover: rgba(28, 35, 56, 0.95);
+      --bg-card: rgba(19, 24, 38, 0.88);
+      --bg-card-hover: rgba(26, 33, 52, 0.96);
       --border-subtle: rgba(255, 255, 255, 0.09);
       --text-main: #f3f6fc;
       --text-sub: #9ba6c1;
@@ -33,8 +33,8 @@
       font-family: 'Inter', 'Noto Sans JP', sans-serif;
       background-color: var(--bg-primary);
       background-image:
-        radial-gradient(circle at 15% 15%, rgba(139, 92, 246, 0.16) 0%, transparent 40%),
-        radial-gradient(circle at 85% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 15% 12%, rgba(139, 92, 246, 0.16) 0%, transparent 40%),
+        radial-gradient(circle at 85% 18%, rgba(0, 240, 255, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 50% 85%, rgba(244, 63, 94, 0.1) 0%, transparent 45%);
       color: var(--text-main);
       min-height: 100vh;
@@ -49,7 +49,7 @@
 
     /* Header / Hero */
     header {
-      padding: 64px 0 40px;
+      padding: 52px 0 32px;
       text-align: center;
       position: relative;
     }
@@ -63,27 +63,27 @@
       background: rgba(0, 240, 255, 0.1);
       border: 1px solid rgba(0, 240, 255, 0.3);
       color: var(--accent-cyan);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.05em;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-size: clamp(1.9rem, 4.2vw, 3.1rem);
       font-weight: 900;
       letter-spacing: -0.02em;
       background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 50%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero-desc {
       max-width: 680px;
-      margin: 0 auto 28px;
+      margin: 0 auto 24px;
       color: var(--text-sub);
-      font-size: 1.02rem;
+      font-size: 0.98rem;
     }
 
     .hero-links {
@@ -97,14 +97,16 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 20px;
+      padding: 9px 18px;
       border-radius: 10px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      cursor: pointer;
+      font-family: inherit;
       transition: all 0.2s ease;
     }
 
@@ -114,23 +116,196 @@
       transform: translateY(-2px);
     }
 
-    /* Filter Tabs */
+    /* Recent Updates Spotlight Box */
+    .updates-spotlight {
+      background: linear-gradient(135deg, rgba(25, 32, 54, 0.92), rgba(17, 22, 37, 0.92));
+      border: 1px solid rgba(0, 240, 255, 0.28);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5), 0 0 24px -8px rgba(0, 240, 255, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .spotlight-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .spotlight-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .live-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      display: inline-block;
+      animation: pulseDot 2s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.35); opacity: 0.65; }
+    }
+
+    .spotlight-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    .btn-refresh {
+      padding: 5px 12px;
+      border-radius: 7px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-refresh:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .recent-feed-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    .feed-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 15px;
+      border-radius: 12px;
+      background: rgba(9, 11, 18, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .feed-item:hover {
+      border-color: rgba(0, 240, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .feed-item.rank-1 {
+      border-color: rgba(244, 63, 94, 0.45);
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.12), rgba(9, 11, 18, 0.75));
+    }
+
+    .feed-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .feed-game-name {
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feed-game-name:hover {
+      color: var(--accent-cyan);
+    }
+
+    .feed-time {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      white-space: nowrap;
+    }
+
+    .feed-item.rank-1 .feed-time {
+      background: rgba(244, 63, 94, 0.25);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.4);
+    }
+
+    .feed-msg {
+      font-size: 0.83rem;
+      color: #cbd5e1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .feed-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: #64748b;
+      margin-top: auto;
+      padding-top: 4px;
+    }
+
+    .commit-sha {
+      font-family: 'JetBrains Mono', monospace;
+      color: #38bdf8;
+      text-decoration: none;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .commit-sha:hover {
+      background: rgba(56, 189, 248, 0.22);
+    }
+
+    /* Controls Bar: Filter + Sort indicator */
+    .controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 0 0 28px;
+    }
+
     .filter-bar {
       display: flex;
-      justify-content: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin: 12px 0 36px;
     }
 
     .filter-btn {
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-sub);
       font-family: inherit;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -148,10 +323,23 @@
       box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
     }
 
+    .sort-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.28);
+      padding: 7px 14px;
+      border-radius: 999px;
+    }
+
     /* Games Grid */
     .games-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 26px;
       margin-bottom: 64px;
     }
@@ -165,6 +353,12 @@
       flex-direction: column;
       transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       backdrop-filter: blur(12px);
+      position: relative;
+    }
+
+    .game-card.latest-winner {
+      border-color: rgba(244, 63, 94, 0.55);
+      box-shadow: 0 12px 32px -8px rgba(244, 63, 94, 0.22);
     }
 
     .game-card:hover {
@@ -175,7 +369,7 @@
     }
 
     .card-banner {
-      height: 155px;
+      height: 145px;
       position: relative;
       display: flex;
       align-items: center;
@@ -185,7 +379,7 @@
     }
 
     .banner-icon {
-      font-size: 3.8rem;
+      font-size: 3.6rem;
       filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
       z-index: 2;
       transition: transform 0.3s ease;
@@ -197,62 +391,142 @@
 
     .banner-tag {
       position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 4px 11px;
+      top: 12px;
+      left: 12px;
+      padding: 4px 10px;
       border-radius: 6px;
       background: rgba(9, 11, 18, 0.78);
       backdrop-filter: blur(6px);
       border: 1px solid rgba(255, 255, 255, 0.14);
-      font-size: 0.75rem;
+      font-size: 0.73rem;
       font-weight: 700;
       color: #e2e8f0;
       z-index: 2;
     }
 
+    .banner-update-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(9, 11, 18, 0.82);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: #f8fafc;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .banner-update-badge.is-top {
+      background: linear-gradient(135deg, #e11d48, #f97316);
+      border-color: rgba(255, 255, 255, 0.35);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.45);
+    }
+
     .card-body {
-      padding: 24px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
     .game-title {
-      font-size: 1.3rem;
+      font-size: 1.28rem;
       font-weight: 800;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       color: #fff;
     }
 
     .game-subtitle {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       color: var(--accent-cyan);
       font-weight: 600;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .game-desc {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-sub);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
+    }
+
+    /* Commit Update Box inside each Card */
+    .commit-box {
+      background: rgba(6, 9, 16, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.24);
+      border-left: 3px solid var(--accent-cyan);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+
+    .commit-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .commit-box-date {
+      color: #94a3b8;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+    }
+
+    .commit-history-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .commit-entry {
+      font-size: 0.81rem;
+      color: #e2e8f0;
+      line-height: 1.45;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+
+    .commit-entry.sub-commit {
+      font-size: 0.77rem;
+      color: #94a3b8;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.07);
+    }
+
+    .commit-entry-text {
       flex: 1;
+      word-break: break-word;
     }
 
     .feature-list {
       list-style: none;
-      margin-bottom: 20px;
-      padding: 12px 14px;
-      background: rgba(0, 0, 0, 0.28);
+      margin-bottom: 16px;
+      padding: 11px 13px;
+      background: rgba(0, 0, 0, 0.25);
       border-radius: 10px;
       border: 1px solid rgba(255, 255, 255, 0.05);
-      font-size: 0.83rem;
+      font-size: 0.81rem;
       color: #cbd5e1;
     }
 
     .feature-list li {
       position: relative;
-      padding-left: 18px;
-      margin-bottom: 5px;
+      padding-left: 17px;
+      margin-bottom: 4px;
     }
 
     .feature-list li:last-child {
@@ -270,12 +544,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .tech-tag {
-      font-size: 0.74rem;
-      padding: 3px 9px;
+      font-size: 0.72rem;
+      padding: 3px 8px;
       border-radius: 6px;
       background: rgba(255, 255, 255, 0.06);
       color: #94a3b8;
@@ -322,7 +596,7 @@
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       text-decoration: none;
       transition: background 0.2s ease, border-color 0.2s ease;
     }
@@ -345,12 +619,15 @@
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       .games-grid {
         grid-template-columns: 1fr;
       }
       header {
-        padding: 44px 0 28px;
+        padding: 40px 0 24px;
+      }
+      .updates-spotlight {
+        padding: 16px;
       }
     }
   </style>
@@ -363,7 +640,7 @@
       <h1>takenoko117 Web Games</h1>
       <p class="hero-desc">
         インストール不要・ブラウザだけで今すぐ遊べるオリジナルゲーム＆物理シミュレーター集。<br />
-        素粒子・宇宙論シミュレーターから、3Dボクセル合戦、ネオンハクスラまで公開中！
+        各リポジトリの最新コミットを自動取得し、<strong>最近アップデートされたゲーム順</strong>に表示しています。
       </p>
       <div class="hero-links">
         <a href="https://github.com/takenoko117" target="_blank" rel="noopener" class="btn-outline">
@@ -375,119 +652,44 @@
       </div>
     </header>
 
-    <div class="filter-bar" role="tablist" aria-label="ジャンルフィルター">
-      <button class="filter-btn active" data-filter="all">すべて表示 (5)</button>
-      <button class="filter-btn" data-filter="science">⚛️ 科学・宇宙シミュレーション (2)</button>
-      <button class="filter-btn" data-filter="battle">⚔️ 3D物理バトル (2)</button>
-      <button class="filter-btn" data-filter="action">⚡ アクション・サバイバー (1)</button>
+    <!-- 最新アップデート速報セクション -->
+    <section class="updates-spotlight" aria-label="最新アップデート速報">
+      <div class="spotlight-header">
+        <div class="spotlight-title">
+          <span class="live-dot"></span>
+          <span>🔥 最新アップデート速報（GitHub 最新コミット連動）</span>
+        </div>
+        <div class="spotlight-status">
+          <span id="api-status-text">GitHub APIから最新情報を同期済み</span>
+          <button type="button" class="btn-refresh" id="btn-refresh-commits" title="GitHub APIから最新コミットを再取得">
+            🔄 最新情報を取得
+          </button>
+        </div>
+      </div>
+      <div class="recent-feed-list" id="recent-feed-list">
+        <!-- JSで最新順トップ3を描画 -->
+      </div>
+    </section>
+
+    <!-- フィルター＆並び順バー -->
+    <div class="controls-bar">
+      <div class="filter-bar" role="tablist" aria-label="ジャンルフィルター">
+        <button class="filter-btn active" data-filter="all">すべて表示 (5)</button>
+        <button class="filter-btn" data-filter="battle">⚔️ 3D物理バトル (2)</button>
+        <button class="filter-btn" data-filter="science">⚛️ 科学・宇宙シミュレーション (2)</button>
+        <button class="filter-btn" data-filter="action">⚡ アクション・サバイバー (1)</button>
+      </div>
+      <div class="sort-indicator">
+        🕒 並び順：<strong>最新アップデート順 (Latest Commit)</strong>
+      </div>
     </div>
 
     <main class="games-grid" id="games-grid">
-      <!-- 1. FUSION GENESIS -->
-      <article class="game-card" data-category="science" style="--card-accent: rgba(245, 158, 11, 0.55); --card-glow: rgba(245, 158, 11, 0.25);">
-        <div class="card-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #7c2d12 55%, #f59e0b 100%);">
-          <span class="banner-tag">拡大再生産 / 核融合物理</span>
-          <div class="banner-icon">⚛️</div>
-        </div>
-        <div class="card-body">
-          <h2 class="game-title">FUSION GENESIS</h2>
-          <div class="game-subtitle" style="color: #fbbf24;">核融合 拡大再生産シミュレーター</div>
-          <p class="game-desc">
-            アップ/ダウンクォークと電子の射出からハドロン合成、重水素・三重水素の精製、トカマク炉での磁気パルス点火までを体験できるインクリメンタル科学シミュレーション。
-          </p>
-          <ul class="feature-list">
-            <li>クォーク結合から D-T 核融合反応（17.59 MeV）までを忠実に再現</li>
-            <li>リチウム増殖ブランケットによるトリチウム自律増殖ループ (TBR &gt; 1.05)</li>
-            <li>ゲーム内に5大フェーズの「核融合攻略手順書」を内蔵</li>
-          </ul>
-          <div class="tech-tags">
-            <span class="tech-tag">HTML5 Canvas</span>
-            <span class="tech-tag">Vanilla JS</span>
-            <span class="tech-tag">Particle Physics</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://takenoko117.github.io/fusion_game/" target="_blank" rel="noopener" class="btn-play">
-              ▶ 今すぐ遊ぶ
-            </a>
-            <a href="https://github.com/takenoko117/fusion_game" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
-              📦 Repo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 2. Multiverse Creator -->
-      <article class="game-card" data-category="science" style="--card-accent: rgba(139, 92, 246, 0.55); --card-glow: rgba(139, 92, 246, 0.28);">
-        <div class="card-banner" style="background: linear-gradient(135deg, #090d16 0%, #311068 55%, #0284c7 100%);">
-          <span class="banner-tag">多元宇宙 / 30大物理定数</span>
-          <div class="banner-icon">🌌</div>
-        </div>
-        <div class="card-body">
-          <h2 class="game-title">Multiverse Creator</h2>
-          <div class="game-subtitle" style="color: #c084fc;">宇宙の30大ハイパーパラメータ・シミュレーター</div>
-          <p class="game-desc">
-            素粒子物理・宇宙論の標準模型における約30種類の物理定数をランダム（宇宙ガチャ）や手動スライダーで改変し、誕生する宇宙の運命と生命誕生の可能性を観測するゲーム。
-          </p>
-          <ul class="feature-list">
-            <li>微小ゆらぎから超混沌カオスまで3段階の「マルチバース・ルーレット」</li>
-            <li>Three.js 3Dマクロ宇宙ビュー ＆ Canvas 2Dミクロ原子核ビューの同時観測</li>
-            <li>時空次元・元素合成・恒星寿命など8段階の宇宙進化アセスメント</li>
-          </ul>
-          <div class="tech-tags">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Three.js</span>
-            <span class="tech-tag">Cosmology</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://takenoko117.github.io/random_universe_sim/" target="_blank" rel="noopener" class="btn-play">
-              ▶ 今すぐ遊ぶ
-            </a>
-            <a href="https://github.com/takenoko117/random_universe_sim" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
-              📦 Repo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 3. NEON SURVIVOR -->
-      <article class="game-card" data-category="action" style="--card-accent: rgba(0, 240, 255, 0.55); --card-glow: rgba(0, 240, 255, 0.25);">
-        <div class="card-banner" style="background: linear-gradient(135deg, #06070d 0%, #0f172a 45%, #06b6d4 100%);">
-          <span class="banner-tag">ローグライト / ハクスラ</span>
-          <div class="banner-icon">⚡</div>
-        </div>
-        <div class="card-body">
-          <h2 class="game-title">NEON SURVIVOR</h2>
-          <div class="game-subtitle" style="color: #22d3ee;">Retro Neon Hack &amp; Slash</div>
-          <p class="game-desc">
-            レトロネオンが輝くサイバー空間で押し寄せる敵の大群をなぎ倒す、ヴァンパイアサバイバー系ローグライトアクション。直感的な操作とド派手な弾幕進化で爽快なサバイバルが楽しめます。
-          </p>
-          <ul class="feature-list">
-            <li>多彩な武器ビルドとレベルアップ成長によるインフレ弾幕バトル</li>
-            <li>Web Audio API 波形合成によるレトロフューチャーな効果音</li>
-            <li>ハードモード・HELLモード・オートラン機能・PWA対応</li>
-          </ul>
-          <div class="tech-tags">
-            <span class="tech-tag">HTML5 Canvas</span>
-            <span class="tech-tag">Web Audio API</span>
-            <span class="tech-tag">Vanilla JS</span>
-            <span class="tech-tag">PWA</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://takenoko117.github.io/NEON-SURVIVOR/" target="_blank" rel="noopener" class="btn-play">
-              ▶ 今すぐ遊ぶ
-            </a>
-            <a href="https://github.com/takenoko117/NEON-SURVIVOR" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
-              📦 Repo
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- 4. ぐにゃぐにゃバトル -->
-      <article class="game-card" data-category="battle" style="--card-accent: rgba(244, 63, 94, 0.55); --card-glow: rgba(244, 63, 94, 0.25);">
+      <!-- 1. ぐにゃぐにゃバトル (TABS_like_claudeOpus5.5) -->
+      <article class="game-card" data-repo="TABS_like_claudeOpus5.5" data-category="battle" style="--card-accent: rgba(244, 63, 94, 0.55); --card-glow: rgba(244, 63, 94, 0.25);">
         <div class="card-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #881337 55%, #e11d48 100%);">
           <span class="banner-tag">3D物理バトル / アーケード＆サンドボックス</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
           <div class="banner-icon">⚔️</div>
         </div>
         <div class="card-body">
@@ -496,6 +698,7 @@
           <p class="game-desc">
             独自 Verlet 物理エンジン＆ボクセルラグドールで動く3D物理合戦シミュレーター。ぐにゃぐにゃと歩き、殴り合い、吹き飛び、部位が砕け散るコミカルかつ戦略的なバトル！
           </p>
+          <div class="commit-box" data-role="commit-box"></div>
           <ul class="feature-list">
             <li>予算内で編成し★3評価と兵種解放を目指す「アーケードモード（全10面）」</li>
             <li>歩兵・騎兵・大砲・巨人・戦象・紅蓮ドラゴンなど個性豊かな全18兵種</li>
@@ -518,10 +721,11 @@
         </div>
       </article>
 
-      <!-- 5. WOBBLE VOXEL WARS -->
-      <article class="game-card" data-category="battle" style="--card-accent: rgba(16, 185, 129, 0.55); --card-glow: rgba(16, 185, 129, 0.25);">
+      <!-- 2. WOBBLE VOXEL WARS (TABS_like) -->
+      <article class="game-card" data-repo="TABS_like" data-category="battle" style="--card-accent: rgba(16, 185, 129, 0.55); --card-glow: rgba(16, 185, 129, 0.25);">
         <div class="card-banner" style="background: linear-gradient(135deg, #0f172a 0%, #065f46 55%, #10b981 100%);">
           <span class="banner-tag">3Dボクセル合戦シミュレーター</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
           <div class="banner-icon">🛡️</div>
         </div>
         <div class="card-body">
@@ -530,6 +734,7 @@
           <p class="game-desc">
             RED ARMY と BLUE ARMY のユニットをフィールドに配置して激突させる 3D ボクセル合戦シミュレーター。サンプル布陣のワンクリック呼び出しやスロー観戦にも対応。
           </p>
+          <div class="commit-box" data-role="commit-box"></div>
           <ul class="feature-list">
             <li>直感的なユニット配置とワンクリック「サンプル布陣」機能</li>
             <li>両軍のリアルタイム生存数・コスト集計表示</li>
@@ -550,6 +755,113 @@
           </div>
         </div>
       </article>
+
+      <!-- 3. Multiverse Creator (random_universe_sim) -->
+      <article class="game-card" data-repo="random_universe_sim" data-category="science" style="--card-accent: rgba(139, 92, 246, 0.55); --card-glow: rgba(139, 92, 246, 0.28);">
+        <div class="card-banner" style="background: linear-gradient(135deg, #090d16 0%, #311068 55%, #0284c7 100%);">
+          <span class="banner-tag">多元宇宙 / 30大物理定数</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
+          <div class="banner-icon">🌌</div>
+        </div>
+        <div class="card-body">
+          <h2 class="game-title">Multiverse Creator</h2>
+          <div class="game-subtitle" style="color: #c084fc;">宇宙の30大ハイパーパラメータ・シミュレーター</div>
+          <p class="game-desc">
+            素粒子物理・宇宙論の標準模型における約30種類の物理定数をランダム（宇宙ガチャ）や手動スライダーで改変し、誕生する宇宙の運命と生命誕生の可能性を観測するゲーム。
+          </p>
+          <div class="commit-box" data-role="commit-box"></div>
+          <ul class="feature-list">
+            <li>微小ゆらぎから超混沌カオスまで3段階の「マルチバース・ルーレット」</li>
+            <li>Three.js 3Dマクロ宇宙ビュー ＆ Canvas 2Dミクロ原子核ビューの同時観測</li>
+            <li>時空次元・元素合成・恒星寿命など8段階の宇宙進化アセスメント</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">Cosmology</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://takenoko117.github.io/random_universe_sim/" target="_blank" rel="noopener" class="btn-play">
+              ▶ 今すぐ遊ぶ
+            </a>
+            <a href="https://github.com/takenoko117/random_universe_sim" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
+              📦 Repo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. FUSION GENESIS (fusion_game) -->
+      <article class="game-card" data-repo="fusion_game" data-category="science" style="--card-accent: rgba(245, 158, 11, 0.55); --card-glow: rgba(245, 158, 11, 0.25);">
+        <div class="card-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #7c2d12 55%, #f59e0b 100%);">
+          <span class="banner-tag">拡大再生産 / 核融合物理</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
+          <div class="banner-icon">⚛️</div>
+        </div>
+        <div class="card-body">
+          <h2 class="game-title">FUSION GENESIS</h2>
+          <div class="game-subtitle" style="color: #fbbf24;">核融合 拡大再生産シミュレーター</div>
+          <p class="game-desc">
+            アップ/ダウンクォークと電子の射出からハドロン合成、重水素・三重水素の精製、トカマク炉での磁気パルス点火までを体験できるインクリメンタル科学シミュレーション。
+          </p>
+          <div class="commit-box" data-role="commit-box"></div>
+          <ul class="feature-list">
+            <li>クォーク結合から D-T 核融合反応（17.59 MeV）までを忠実に再現</li>
+            <li>リチウム増殖ブランケットによるトリチウム自律増殖ループ (TBR &gt; 1.05)</li>
+            <li>ゲーム内に5大フェーズの「核融合攻略手順書」を内蔵</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5 Canvas</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">Particle Physics</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://takenoko117.github.io/fusion_game/" target="_blank" rel="noopener" class="btn-play">
+              ▶ 今すぐ遊ぶ
+            </a>
+            <a href="https://github.com/takenoko117/fusion_game" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
+              📦 Repo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. NEON SURVIVOR (NEON-SURVIVOR) -->
+      <article class="game-card" data-repo="NEON-SURVIVOR" data-category="action" style="--card-accent: rgba(0, 240, 255, 0.55); --card-glow: rgba(0, 240, 255, 0.25);">
+        <div class="card-banner" style="background: linear-gradient(135deg, #06070d 0%, #0f172a 45%, #06b6d4 100%);">
+          <span class="banner-tag">ローグライト / ハクスラ</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
+          <div class="banner-icon">⚡</div>
+        </div>
+        <div class="card-body">
+          <h2 class="game-title">NEON SURVIVOR</h2>
+          <div class="game-subtitle" style="color: #22d3ee;">Retro Neon Hack &amp; Slash</div>
+          <p class="game-desc">
+            レトロネオンが輝くサイバー空間で押し寄せる敵の大群をなぎ倒す、ヴァンパイアサバイバー系ローグライトアクション。直感的な操作とド派手な弾幕進化で爽快なサバイバルが楽しめます。
+          </p>
+          <div class="commit-box" data-role="commit-box"></div>
+          <ul class="feature-list">
+            <li>多彩な武器ビルドとレベルアップ成長によるインフレ弾幕バトル</li>
+            <li>Web Audio API 波形合成によるレトロフューチャーな効果音</li>
+            <li>ハードモード・HELLモード・オートラン機能・PWA対応</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">HTML5 Canvas</span>
+            <span class="tech-tag">Web Audio API</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">PWA</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://takenoko117.github.io/NEON-SURVIVOR/" target="_blank" rel="noopener" class="btn-play">
+              ▶ 今すぐ遊ぶ
+            </a>
+            <a href="https://github.com/takenoko117/NEON-SURVIVOR" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
+              📦 Repo
+            </a>
+          </div>
+        </div>
+      </article>
     </main>
 
     <footer>
@@ -558,14 +870,323 @@
   </div>
 
   <script>
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.game-card');
+    const OWNER = 'takenoko117';
+    const CACHE_KEY = 'takenoko117_web_games_commits_v1';
+    const CACHE_TTL_MS = 5 * 60 * 1000; // 5分キャッシュ
 
+    // ゲーム基本メタデータ＆フォールバック用初期コミット履歴（API制限時でも即座に表示可能）
+    const GAME_META = {
+      'TABS_like_claudeOpus5.5': {
+        title: '⚔️ ぐにゃぐにゃバトル',
+        playUrl: 'https://takenoko117.github.io/TABS_like_claudeOpus5.5/',
+        fallbackCommits: [
+          {
+            sha: 'e7655c2',
+            date: '2026-10-24T04:26:56Z',
+            message: 'READMEに遊び方・兵種一覧・地形ギミック解説およびGitHub Pagesのリンクを追加',
+            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/e7655c2'
+          },
+          {
+            sha: '263b7a0',
+            date: '2026-10-24T03:52:16Z',
+            message: 'アーケードモード（全10面）の実装・新兵種3体の演出追加・地形ギミック（一本橋・石柱・奇襲配置）および進行保存機能を追加',
+            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/263b7a0'
+          }
+        ]
+      },
+      'TABS_like': {
+        title: '🛡️ WOBBLE VOXEL WARS',
+        playUrl: 'https://takenoko117.github.io/TABS_like/',
+        fallbackCommits: [
+          {
+            sha: '207da65',
+            date: '2026-10-24T02:18:34Z',
+            message: '初期実装：3Dボクセル物理バトルシミュレーターとBGM・SEを追加',
+            url: 'https://github.com/takenoko117/TABS_like/commit/207da65'
+          }
+        ]
+      },
+      'random_universe_sim': {
+        title: '🌌 Multiverse Creator',
+        playUrl: 'https://takenoko117.github.io/random_universe_sim/',
+        fallbackCommits: [
+          {
+            sha: '9010b77',
+            date: '2026-09-19T11:56:25Z',
+            message: 'feat: expand galaxy count by 100x to 2,800+ procedural galaxies with 280,000 stars（銀河数を100倍の2,800個以上・恒星28万個へ拡張）',
+            url: 'https://github.com/takenoko117/random_universe_sim/commit/9010b77'
+          },
+          {
+            sha: 'eafe95b',
+            date: '2026-09-19T11:49:30Z',
+            message: 'fix: auto-tour continuous morphing and expand to 28+ diverse galaxies with 120,000 stars',
+            url: 'https://github.com/takenoko117/random_universe_sim/commit/eafe95b'
+          }
+        ]
+      },
+      'fusion_game': {
+        title: '⚛️ FUSION GENESIS',
+        playUrl: 'https://takenoko117.github.io/fusion_game/',
+        fallbackCommits: [
+          {
+            sha: 'cf9fbf1',
+            date: '2026-09-14T11:00:52Z',
+            message: 'feat: 自動同位体結晶機のトリチウム専用化およびKaTeXによる数式レンダリング対応',
+            url: 'https://github.com/takenoko117/fusion_game/commit/cf9fbf1'
+          },
+          {
+            sha: '10b316a',
+            date: '2026-09-14T10:31:29Z',
+            message: 'feat: UI段階的アンロック、素粒子合成演出強化、施設生産量明記、GeV単位修正、重水素表記統一',
+            url: 'https://github.com/takenoko117/fusion_game/commit/10b316a'
+          }
+        ]
+      },
+      'NEON-SURVIVOR': {
+        title: '⚡ NEON SURVIVOR',
+        playUrl: 'https://takenoko117.github.io/NEON-SURVIVOR/',
+        fallbackCommits: [
+          {
+            sha: '0ca593b',
+            date: '2026-06-27T07:36:56Z',
+            message: 'Add shop initial weapon selection（ショップでの初期武器選択機能を追加）',
+            url: 'https://github.com/takenoko117/NEON-SURVIVOR/commit/0ca593b'
+          },
+          {
+            sha: 'fbc5ec4',
+            date: '2026-06-27T07:12:10Z',
+            message: 'Make game screen size dynamic to fit browser viewport（ブラウザ画面に合わせた動的スクリーンサイズ対応）',
+            url: 'https://github.com/takenoko117/NEON-SURVIVOR/commit/fbc5ec4'
+          }
+        ]
+      }
+    };
+
+    // 英語コミットメッセージにわかりやすい日本語補足をつけるヘルパー
+    const COMMIT_JP_HINTS = {
+      '9010b77': '銀河数を100倍（2,800銀河・28万恒星）へ大幅拡張',
+      'eafe95b': 'オートツアーの連続モーフィング修正＆多様な銀河を追加',
+      'b170aba': '3Dマクロビューの全画面モードと5秒オートツアー機能を追加',
+      '0ca593b': 'ショップでの初期武器選択機能を追加',
+      'fbc5ec4': 'ブラウザ画面サイズに合わせた動的キャンバスリサイズ対応',
+      '8fd0116': 'BIG BOSSのHP1兆＆サイズ10倍化アップグレード',
+      'dd2097b': '水素大量生産施設と上部バーの生産レート表示を追加'
+    };
+
+    function formatCommitMessage(sha, rawMessage) {
+      const firstLine = (rawMessage || '').split('\n')[0].trim();
+      const shortSha = (sha || '').substring(0, 7);
+      const hint = COMMIT_JP_HINTS[shortSha];
+      if (hint && !firstLine.includes(hint)) {
+        return `${firstLine} （${hint}）`;
+      }
+      return firstLine;
+    }
+
+    function formatDateJP(isoStr) {
+      const d = new Date(isoStr);
+      if (isNaN(d.getTime())) return '';
+      const yyyy = d.getFullYear();
+      const mm = String(d.getMonth() + 1).padStart(2, '0');
+      const dd = String(d.getDate()).padStart(2, '0');
+      const hh = String(d.getHours()).padStart(2, '0');
+      const min = String(d.getMinutes()).padStart(2, '0');
+      return `${yyyy}/${mm}/${dd} ${hh}:${min}`;
+    }
+
+    function formatRelativeTime(isoStr) {
+      const d = new Date(isoStr);
+      if (isNaN(d.getTime())) return '';
+      const diffMs = Date.now() - d.getTime();
+      const diffMin = Math.floor(diffMs / 60000);
+      if (diffMin < 1) return 'たった今';
+      if (diffMin < 60) return `${diffMin}分前`;
+      const diffHours = Math.floor(diffMin / 60);
+      if (diffHours < 24) return `${diffHours}時間前`;
+      const diffDays = Math.floor(diffHours / 24);
+      if (diffDays < 30) return `${diffDays}日前`;
+      const diffMonths = Math.floor(diffDays / 30);
+      if (diffMonths < 12) return `${diffMonths}ヶ月前`;
+      return `${Math.floor(diffMonths / 12)}年前`;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // UIへコミット情報を反映し、カードを最新コミット順に並べ替える
+    function renderPortalWithCommits(commitsByRepo) {
+      const grid = document.getElementById('games-grid');
+      const cards = Array.from(grid.querySelectorAll('.game-card'));
+
+      // 最新コミット日時でソート（降順）
+      cards.sort((a, b) => {
+        const repoA = a.dataset.repo;
+        const repoB = b.dataset.repo;
+        const latestA = commitsByRepo[repoA]?.[0]?.date || '1970-01-01T00:00:00Z';
+        const latestB = commitsByRepo[repoB]?.[0]?.date || '1970-01-01T00:00:00Z';
+        return new Date(latestB).getTime() - new Date(latestA).getTime();
+      });
+
+      // DOM順序を最新順に更新し、各カード内のアップデート欄を描画
+      cards.forEach((card, index) => {
+        grid.appendChild(card);
+        const repo = card.dataset.repo;
+        const commits = commitsByRepo[repo] || GAME_META[repo].fallbackCommits;
+        const latest = commits[0];
+
+        const badgeEl = card.querySelector('[data-role="update-badge"]');
+        const commitBoxEl = card.querySelector('[data-role="commit-box"]');
+
+        if (index === 0) {
+          card.classList.add('latest-winner');
+          badgeEl.classList.add('is-top');
+          badgeEl.innerHTML = `🔥 最新アプデ (${escapeHtml(formatRelativeTime(latest.date))})`;
+        } else {
+          card.classList.remove('latest-winner');
+          badgeEl.classList.remove('is-top');
+          badgeEl.innerHTML = `🕒 最終更新: ${escapeHtml(formatRelativeTime(latest.date))}`;
+        }
+
+        // カード内の最新コミット履歴（最大2件表示し、README更新の直前の機能更新もわかるようにする）
+        const displayCommits = commits.slice(0, 2);
+        const listHtml = displayCommits.map((c, idx) => {
+          const shortSha = (c.sha || '').substring(0, 7);
+          const msg = formatCommitMessage(shortSha, c.message);
+          return `
+            <li class="commit-entry ${idx > 0 ? 'sub-commit' : ''}">
+              <a class="commit-sha" href="${escapeHtml(c.url)}" target="_blank" rel="noopener" title="コミット差分を見る">${escapeHtml(shortSha)}</a>
+              <span class="commit-entry-text">${escapeHtml(msg)}</span>
+            </li>
+          `;
+        }).join('');
+
+        commitBoxEl.innerHTML = `
+          <div class="commit-box-header">
+            <span>📝 最新アップデート内容</span>
+            <span class="commit-box-date">${escapeHtml(formatDateJP(latest.date))}</span>
+          </div>
+          <ul class="commit-history-list">
+            ${listHtml}
+          </ul>
+        `;
+      });
+
+      // 上部「最新アップデート速報」セクションに上位3ゲームを描画
+      const feedListEl = document.getElementById('recent-feed-list');
+      const sortedRepos = cards.map(c => c.dataset.repo).slice(0, 3);
+      feedListEl.innerHTML = sortedRepos.map((repo, idx) => {
+        const meta = GAME_META[repo];
+        const commits = commitsByRepo[repo] || meta.fallbackCommits;
+        const latest = commits[0];
+        const second = commits[1];
+        const shortSha = (latest.sha || '').substring(0, 7);
+        const primaryMsg = formatCommitMessage(shortSha, latest.message);
+        const secondaryMsg = second ? ` / 前回: ${formatCommitMessage(second.sha, second.message)}` : '';
+
+        return `
+          <div class="feed-item ${idx === 0 ? 'rank-1' : ''}">
+            <div class="feed-top">
+              <a href="${escapeHtml(meta.playUrl)}" target="_blank" rel="noopener" class="feed-game-name">
+                ${idx === 0 ? '🆕 ' : ''}${escapeHtml(meta.title)}
+              </a>
+              <span class="feed-time">${escapeHtml(formatRelativeTime(latest.date))}</span>
+            </div>
+            <div class="feed-msg" title="${escapeHtml(primaryMsg + secondaryMsg)}">
+              ${escapeHtml(primaryMsg)}${second ? `<br><span style="color:#94a3b8;font-size:0.78rem;">↳ ${escapeHtml(formatCommitMessage(second.sha, second.message))}</span>` : ''}
+            </div>
+            <div class="feed-meta">
+              <span>${escapeHtml(formatDateJP(latest.date))}</span>
+              <a class="commit-sha" href="${escapeHtml(latest.url)}" target="_blank" rel="noopener">#${escapeHtml(shortSha)}</a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    async function fetchAllCommits(forceRefresh = false) {
+      const statusEl = document.getElementById('api-status-text');
+
+      if (!forceRefresh) {
+        try {
+          const cachedRaw = sessionStorage.getItem(CACHE_KEY);
+          if (cachedRaw) {
+            const cached = JSON.parse(cachedRaw);
+            if (Date.now() - cached.timestamp < CACHE_TTL_MS) {
+              renderPortalWithCommits(cached.data);
+              statusEl.textContent = 'GitHub APIから最新情報を同期済み';
+              return;
+            }
+          }
+        } catch (e) {
+          // ignore storage errors
+        }
+      }
+
+      statusEl.textContent = 'GitHub APIから最新コミットを取得中...';
+      const repos = Object.keys(GAME_META);
+      const result = {};
+
+      await Promise.all(repos.map(async (repo) => {
+        try {
+          const res = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/commits?per_page=3`, {
+            headers: { 'Accept': 'application/vnd.github+json' }
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (Array.isArray(data) && data.length > 0) {
+            result[repo] = data.map(item => ({
+              sha: item.sha,
+              date: item.commit?.committer?.date || item.commit?.author?.date,
+              message: item.commit?.message || '',
+              url: item.html_url
+            }));
+          } else {
+            result[repo] = GAME_META[repo].fallbackCommits;
+          }
+        } catch (err) {
+          result[repo] = GAME_META[repo].fallbackCommits;
+        }
+      }));
+
+      try {
+        sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+          timestamp: Date.now(),
+          data: result
+        }));
+      } catch (e) {
+        // ignore storage errors
+      }
+
+      renderPortalWithCommits(result);
+      const nowStr = new Date().toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' });
+      statusEl.textContent = `GitHub最新コミット同期完了 (${nowStr})`;
+    }
+
+    // 初期描画（フォールバックデータで即座に最新順ソート表示し、その後APIからリアルタイム取得）
+    const initialData = {};
+    Object.keys(GAME_META).forEach(repo => {
+      initialData[repo] = GAME_META[repo].fallbackCommits;
+    });
+    renderPortalWithCommits(initialData);
+    fetchAllCommits(false);
+
+    document.getElementById('btn-refresh-commits').addEventListener('click', () => {
+      fetchAllCommits(true);
+    });
+
+    // ジャンルフィルター制御
+    const buttons = document.querySelectorAll('.filter-btn');
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const filter = btn.dataset.filter;
+        const cards = document.querySelectorAll('.game-card');
         cards.forEach(card => {
           if (filter === 'all' || card.dataset.category === filter) {
             card.style.display = 'flex';
