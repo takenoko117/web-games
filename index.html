@@ -674,7 +674,8 @@
     <!-- フィルター＆並び順バー -->
     <div class="controls-bar">
       <div class="filter-bar" role="tablist" aria-label="ジャンルフィルター">
-        <button class="filter-btn active" data-filter="all">すべて表示 (5)</button>
+        <button class="filter-btn active" data-filter="all">すべて表示 (6)</button>
+        <button class="filter-btn" data-filter="rpg">👾 ネームバトル / RPG (1)</button>
         <button class="filter-btn" data-filter="battle">⚔️ 3D物理バトル (2)</button>
         <button class="filter-btn" data-filter="science">⚛️ 科学・宇宙シミュレーション (2)</button>
         <button class="filter-btn" data-filter="action">⚡ アクション・サバイバー (1)</button>
@@ -685,6 +686,43 @@
     </div>
 
     <main class="games-grid" id="games-grid">
+      <!-- 0. ネームバトラー (Pokemon_like_name_battle) -->
+      <article class="game-card" data-repo="Pokemon_like_name_battle" data-category="rpg" style="--card-accent: rgba(239, 68, 68, 0.55); --card-glow: rgba(239, 68, 68, 0.25);">
+        <div class="card-banner" style="background: linear-gradient(135deg, #18181b 0%, #7f1d1d 55%, #ef4444 100%);">
+          <span class="banner-tag">ポケモンライク / 自律ハッシュバトル</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
+          <div class="banner-icon">👾</div>
+        </div>
+        <div class="card-body">
+          <h2 class="game-title">ネームバトラー</h2>
+          <div class="game-subtitle" style="color: #f87171;">Name Battler — 名前から生まれるモンスターバトル</div>
+          <p class="game-desc">
+            入力された名前のハッシュ値から、ステータス・タイプ・技・左右対称ドット絵を決定論的に自律生成！ポケモン公式完全準拠のダメージ計算式＆タイプ相性で繰り広げる白熱の1vs1オートバトル。
+          </p>
+          <div class="commit-box" data-role="commit-box"></div>
+          <ul class="feature-list">
+            <li>名前ハッシュから種族値合計60〜1200（平均600）の個体・タイプ・技・ドット絵を自動生成</li>
+            <li>全18タイプ相性・STAB1.5倍・急所・命中率・公式ダメージ計算式を完全準拠</li>
+            <li>相手の弱点や最大打点を自律判断するスマートAI ＆ 4段階の速度調整（1x〜SKIP）</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Vite</span>
+            <span class="tech-tag">HTML5 Canvas</span>
+            <span class="tech-tag">Web Audio API</span>
+            <span class="tech-tag">Vitest</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://takenoko117.github.io/Pokemon_like_name_battle/" target="_blank" rel="noopener" class="btn-play">
+              ▶ 今すぐ遊ぶ
+            </a>
+            <a href="https://github.com/takenoko117/Pokemon_like_name_battle" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
+              📦 Repo
+            </a>
+          </div>
+        </div>
+      </article>
+
       <!-- 1. ぐにゃぐにゃバトル (TABS_like_claudeOpus5.5) -->
       <article class="game-card" data-repo="TABS_like_claudeOpus5.5" data-category="battle" style="--card-accent: rgba(244, 63, 94, 0.55); --card-glow: rgba(244, 63, 94, 0.25);">
         <div class="card-banner" style="background: linear-gradient(135deg, #1e1b4b 0%, #881337 55%, #e11d48 100%);">
@@ -696,13 +734,13 @@
           <h2 class="game-title">ぐにゃぐにゃバトル</h2>
           <div class="game-subtitle" style="color: #fb7185;">TABS風 3Dボクセル物理バトルシミュレーター</div>
           <p class="game-desc">
-            独自 Verlet 物理エンジン＆ボクセルラグドールで動く3D物理合戦シミュレーター。ぐにゃぐにゃと歩き、殴り合い、吹き飛び、部位が砕け散るコミカルかつ戦略的なバトル！
+            独自 Verlet 物理エンジン＆ボクセルラグドールで動く3D物理合戦シミュレーター。関節のばね制御でコミカルに歩き、殴り合い、吹き飛び、部位が砕け散る迫力の合戦！
           </p>
           <div class="commit-box" data-role="commit-box"></div>
           <ul class="feature-list">
-            <li>予算内で編成し★3評価と兵種解放を目指す「アーケードモード（全10面）」</li>
-            <li>歩兵・騎兵・大砲・巨人・戦象・紅蓮ドラゴンなど個性豊かな全18兵種</li>
-            <li>渓谷の一本橋や遮蔽石柱などの地形ギミック＆自由配置サンドボックス</li>
+            <li>全40面アーケードモード（第1部〜第4部、天候・状態異常ハザード対応）＆サンドボックス</li>
+            <li>歩兵・騎兵から超巨大戦車・ロボット・使徒神・ヤマムロン・デオキシス・ホンゴンまで全33兵種＋施設</li>
+            <li>渓谷の一本橋・石柱遮蔽・増殖ゲート・三軍同時展開などの多彩な地形ギミック</li>
           </ul>
           <div class="tech-tags">
             <span class="tech-tag">TypeScript</span>
@@ -807,9 +845,9 @@
           </p>
           <div class="commit-box" data-role="commit-box"></div>
           <ul class="feature-list">
-            <li>クォーク結合から D-T 核融合反応（17.59 MeV）までを忠実に再現</li>
+            <li>クォーク結合から D-T 核融合（17.59 MeV）、v2.0 Hyper-Torus大型炉心へ進化</li>
             <li>リチウム増殖ブランケットによるトリチウム自律増殖ループ (TBR &gt; 1.05)</li>
-            <li>ゲーム内に5大フェーズの「核融合攻略手順書」を内蔵</li>
+            <li>ゲーム内に5大フェーズの「核融合攻略手順書」＆KaTeX数式レンダリングを内蔵</li>
           </ul>
           <div class="tech-tags">
             <span class="tech-tag">HTML5 Canvas</span>
@@ -871,26 +909,44 @@
 
   <script>
     const OWNER = 'takenoko117';
-    const CACHE_KEY = 'takenoko117_web_games_commits_v1';
+    const CACHE_KEY = 'takenoko117_web_games_commits_v2';
     const CACHE_TTL_MS = 5 * 60 * 1000; // 5分キャッシュ
 
     // ゲーム基本メタデータ＆フォールバック用初期コミット履歴（API制限時でも即座に表示可能）
     const GAME_META = {
+      'Pokemon_like_name_battle': {
+        title: '👾 ネームバトラー',
+        playUrl: 'https://takenoko117.github.io/Pokemon_like_name_battle/',
+        fallbackCommits: [
+          {
+            sha: '39fea8e',
+            date: '2026-11-06T11:26:22Z',
+            message: 'feat: ネームバトラー (Name Battler) 初回コミット：名前ハッシュによるステータス・タイプ・技・ドット絵生成とポケモン準拠1vs1バトル実装',
+            url: 'https://github.com/takenoko117/Pokemon_like_name_battle/commit/39fea8e'
+          }
+        ]
+      },
       'TABS_like_claudeOpus5.5': {
         title: '⚔️ ぐにゃぐにゃバトル',
         playUrl: 'https://takenoko117.github.io/TABS_like_claudeOpus5.5/',
         fallbackCommits: [
           {
-            sha: 'e7655c2',
-            date: '2026-10-24T04:26:56Z',
-            message: 'READMEに遊び方・兵種一覧・地形ギミック解説およびGitHub Pagesのリンクを追加',
-            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/e7655c2'
+            sha: '4951da4',
+            date: '2026-11-05T12:05:07Z',
+            message: 'ホンゴンの3Dボクセルモデルを巨大グランドピアノ＆ブロンド長髪の女性ピアニストへ刷新、アイコン更新とモデル検証テストを追加',
+            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/4951da4'
           },
           {
-            sha: '263b7a0',
-            date: '2026-10-24T03:52:16Z',
-            message: 'アーケードモード（全10面）の実装・新兵種3体の演出追加・地形ギミック（一本橋・石柱・奇襲配置）および進行保存機能を追加',
-            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/263b7a0'
+            sha: 'aa276c2',
+            date: '2026-11-05T11:48:51Z',
+            message: 'ホンゴンに特殊効果「遠距離攻撃無効」を実装し、UI表示および回帰テストを追加',
+            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/aa276c2'
+          },
+          {
+            sha: 'c885284',
+            date: '2026-11-05T11:33:32Z',
+            message: '新ユニット「デオキシス」およびアーケード第31面〜第40面（状態異常ハザード・天候演出）を追加',
+            url: 'https://github.com/takenoko117/TABS_like_claudeOpus5.5/commit/c885284'
           }
         ]
       },
@@ -903,6 +959,30 @@
             date: '2026-10-24T02:18:34Z',
             message: '初期実装：3Dボクセル物理バトルシミュレーターとBGM・SEを追加',
             url: 'https://github.com/takenoko117/TABS_like/commit/207da65'
+          }
+        ]
+      },
+      'fusion_game': {
+        title: '⚛️ FUSION GENESIS',
+        playUrl: 'https://takenoko117.github.io/fusion_game/',
+        fallbackCommits: [
+          {
+            sha: 'e6c3516',
+            date: '2026-10-25T10:47:57Z',
+            message: 'feat: FUSION GENESIS v2.0 Hyper-Torus大型アップデート',
+            url: 'https://github.com/takenoko117/fusion_game/commit/e6c3516'
+          },
+          {
+            sha: 'cf9fbf1',
+            date: '2026-09-14T11:00:52Z',
+            message: 'feat: 自動同位体結晶機のトリチウム専用化およびKaTeXによる数式レンダリング対応',
+            url: 'https://github.com/takenoko117/fusion_game/commit/cf9fbf1'
+          },
+          {
+            sha: '10b316a',
+            date: '2026-09-14T10:31:29Z',
+            message: 'feat: UI段階的アンロック、素粒子合成演出強化、施設生産量明記、GeV単位修正、重水素表記統一',
+            url: 'https://github.com/takenoko117/fusion_game/commit/10b316a'
           }
         ]
       },
@@ -921,24 +1001,6 @@
             date: '2026-09-19T11:49:30Z',
             message: 'fix: auto-tour continuous morphing and expand to 28+ diverse galaxies with 120,000 stars',
             url: 'https://github.com/takenoko117/random_universe_sim/commit/eafe95b'
-          }
-        ]
-      },
-      'fusion_game': {
-        title: '⚛️ FUSION GENESIS',
-        playUrl: 'https://takenoko117.github.io/fusion_game/',
-        fallbackCommits: [
-          {
-            sha: 'cf9fbf1',
-            date: '2026-09-14T11:00:52Z',
-            message: 'feat: 自動同位体結晶機のトリチウム専用化およびKaTeXによる数式レンダリング対応',
-            url: 'https://github.com/takenoko117/fusion_game/commit/cf9fbf1'
-          },
-          {
-            sha: '10b316a',
-            date: '2026-09-14T10:31:29Z',
-            message: 'feat: UI段階的アンロック、素粒子合成演出強化、施設生産量明記、GeV単位修正、重水素表記統一',
-            url: 'https://github.com/takenoko117/fusion_game/commit/10b316a'
           }
         ]
       },
@@ -964,6 +1026,11 @@
 
     // 英語コミットメッセージにわかりやすい日本語補足をつけるヘルパー
     const COMMIT_JP_HINTS = {
+      '39fea8e': '名前ハッシュによるステータス・タイプ・技・ドット絵生成とポケモン準拠1vs1バトル',
+      '4951da4': 'ホンゴンを巨大グランドピアノ＆ブロンド長髪の女性ピアニストへ刷新',
+      'aa276c2': 'ホンゴンに「遠距離攻撃無効」特殊効果を実装',
+      'c885284': '新ユニット「デオキシス」＆アーケード第31〜40面（天候演出・状態異常ハザード）追加',
+      'e6c3516': 'v2.0 Hyper-Torus大型炉心アップデート',
       '9010b77': '銀河数を100倍（2,800銀河・28万恒星）へ大幅拡張',
       'eafe95b': 'オートツアーの連続モーフィング修正＆多様な銀河を追加',
       'b170aba': '3Dマクロビューの全画面モードと5秒オートツアー機能を追加',
