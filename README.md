@@ -12,7 +12,7 @@
 | タイトル | ジャンル | 技術スタック | プレイリンク (GitHub Pages) | ソースコード |
 | :--- | :--- | :--- | :---: | :---: |
 | **👾 ネームバトラー (Name Battler)** | ポケモンライク・自律ハッシュバトル | TypeScript / Vite / Canvas / Web Audio | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/Pokemon_like_name_battle/) | [📦 Repo](https://github.com/takenoko117/Pokemon_like_name_battle) |
-| **⚔️ ぐにゃぐにゃバトル** | TABS風 3Dボクセル物理バトル（全40面＋サンドボックス） | TypeScript / Three.js / 独自Verlet物理 | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/TABS_like_claudeOpus5.5/) | [📦 Repo](https://github.com/takenoko117/TABS_like_claudeOpus5.5) |
+| **⚔️ エクスブロックスウォー** | TABS風 3Dボクセル物理バトル（全40面＋5モード＋オンライン対戦） | TypeScript / Three.js / 独自Verlet物理 | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/TABS_like_claudeOpus5.5/) | [📦 Repo](https://github.com/takenoko117/TABS_like_claudeOpus5.5) |
 | **⚛️ FUSION GENESIS** | 核融合・拡大再生産シミュレーター (v2.0) | HTML5 / Canvas / Vanilla JS | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/fusion_game/) | [📦 Repo](https://github.com/takenoko117/fusion_game) |
 | **🌌 Multiverse Creator** | 30大物理定数・多元宇宙シミュレーター | React / TypeScript / Three.js | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/random_universe_sim/) | [📦 Repo](https://github.com/takenoko117/random_universe_sim) |
 | **⚡ NEON SURVIVOR** | ヴァンサバ系レトロネオン・ハック＆スラッシュ | HTML5 Canvas / Web Audio API / PWA | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/NEON-SURVIVOR/) | [📦 Repo](https://github.com/takenoko117/NEON-SURVIVOR) |
@@ -39,22 +39,22 @@
 
 ---
 
-### 2. ⚔️ ぐにゃぐにゃバトル — 物理バトルシミュレーター
+### 2. ⚔️ エクスブロックスウォー — 物理バトルシミュレーター
 
 * 🌐 **プレイURL**: [https://takenoko117.github.io/TABS_like_claudeOpus5.5/](https://takenoko117.github.io/TABS_like_claudeOpus5.5/)
 * 📦 **リポジトリ**: [takenoko117/TABS_like_claudeOpus5.5](https://github.com/takenoko117/TABS_like_claudeOpus5.5)
 * 🏷️ **ジャンル**: 3D ボクセルラグドール・物理タクティカルバトルシミュレーター
 
 **【概要】**  
-『Totally Accurate Battle Simulator (TABS)』風の、独自 Verlet 物理エンジン＆ボクセルラグドールで動く 3D 物理バトルシミュレーターです。関節のばね制御でぐにゃぐにゃと歩き、殴り合い、吹き飛び、部位が砕け散るコミカルかつ戦略的な合戦を楽しめます。
+『Totally Accurate Battle Simulator (TABS)』風の、独自 Verlet 物理エンジン＆ボクセルラグドールで動く 3D 物理バトルシミュレーターです。関節のばね制御でぐにゃぐにゃと歩き、殴り合い、吹き飛び、部位が砕け散るコミカルかつ戦略的な合戦を楽しめます。アーケード・ローグライト・タワーディフェンス・チャレンジ・友人対戦の5モードを搭載し、オンライン対戦ではドラフト編成バトルが遊べます。
 
 **【主な特徴】**
 - **超拡張アーケードモード（全40面）＆サンドボックス**:
   - 第1部（基礎歩兵〜巨獣・帝国軍）、第2部（現代兵器・神々の使徒襲来）、第3部〜第4部（天候演出・状態異常ハザード）まで段階的に攻略するタクティカルモード。
   - 制限なしで両軍に自由配置・実験できるサンドボックスモード＆ワンクリック「プリセット編成」を搭載。
-- **個性豊かな全33兵種＋防衛施設**:
+- **個性豊かな全61兵種＋防衛施設**:
   - 歩兵・盾兵・槍兵・弓兵・爆弾兵・魔術師・騎兵・大砲・巨人・鎧戦象・ドラゴンなどのファンタジー兵種。
-  - 暴走バギー・超巨大戦車・巨大ロボット・霊峰神「ヤマムロン」、使徒神（サキエル・ラミエル・サハクィエル・ゼルエル）、デオキシス、巨大グランドピアノ＆ブロンド長髪女性ピアニストの「ホンゴン」など多彩なユニットが登場。
+  - 暴走バギー・超巨大戦車・巨大ロボット・霊峰神「ヤマムロン」、使徒神（サキエル・ラミエル・サハクィエル・ゼルエル）、デオキシス、巨大グランドピアノ＆ブロンド長髪女性ピアニストの「ホンゴン」など多彩なユニットが登場。魔法系（氷結術師・死霊術師・星辰の大賢者ほか）・神性ユニットに加え、山手線・ランドマークタワー・ザ・アース・ザ・ユニバースといった宇宙系ユニットも参戦。
 - **多彩な地形ギミック**: 渓谷の一本橋と奈落、石柱群の飛び道具遮蔽、側面奇襲ゾーン、増殖ゲート、三軍同時展開ゾーンなど。
 - **充実の観戦カメラ**: オービット操作、ユニットクリック追従カメラ、スローモーション（`0.25x`）・倍速（`2x`）再生に対応。
 
