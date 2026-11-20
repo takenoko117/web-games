@@ -17,6 +17,7 @@
 | **🌌 Multiverse Creator** | 30大物理定数・多元宇宙シミュレーター | React / TypeScript / Three.js | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/random_universe_sim/) | [📦 Repo](https://github.com/takenoko117/random_universe_sim) |
 | **⚡ NEON SURVIVOR** | ヴァンサバ系レトロネオン・ハック＆スラッシュ | HTML5 Canvas / Web Audio API / PWA | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/NEON-SURVIVOR/) | [📦 Repo](https://github.com/takenoko117/NEON-SURVIVOR) |
 | **🛡️ WOBBLE VOXEL WARS** | 3D TABSライク物理バトルシミュレーター | TypeScript / Three.js / Web Audio | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/TABS_like/) | [📦 Repo](https://github.com/takenoko117/TABS_like) |
+| **🌱 かぶくんコンテスト** | 3Dソフトボディ物理・30秒スコアアタック | Three.js / 独自物理 (Verlet鎖) | [**▶ 今すぐ遊ぶ**](https://takenoko117.github.io/kabu-contest/) | [📦 Repo](https://github.com/takenoko117/kabu-contest) |
 
 ---
 
@@ -120,6 +121,22 @@
 **【主な特徴】**
 - **直感的な部隊配置とプリセット合戦**: ワンクリックで呼び出せる「サンプル布陣」や自由なユニット配置で、すぐに大規模な合戦を開始可能。
 - **リアルタイム統計と演出**: 両軍の生存数・コスト合計の表示、タイムスケール変更、Web Audio による効果音演出を搭載。
+
+---
+
+### 7. 🌱 かぶくんコンテスト - Kabukun Contest
+
+* 🌐 **プレイURL**: [https://takenoko117.github.io/kabu-contest/](https://takenoko117.github.io/kabu-contest/)
+* 📦 **リポジトリ**: [takenoko117/kabu-contest](https://github.com/takenoko117/kabu-contest)
+* 🏷️ **ジャンル**: 3D ソフトボディ物理・受難系スコアアタック
+
+**【概要】**  
+ジェットホースで水を吸わせてかぶくんを太らせ、鎖鉄球フレイル（モーニングスター）でぶっ飛ばす、30秒のスコアアタックゲームです。水分が多いほど一撃が重く遠くまで飛びますが、殴るたびに水が噴き出して減っていくため、給水と一撃の繰り返しが勝負になります。バネ物理でぷるぷる変形するソフトボディが、予測不能な「とんでもないぶっとび」をたまに生むカオス仕様です。
+
+**【主な特徴】**
+- **ソフトボディかぶくん**: バネでぷるぷる変形し、潰れた瞬間を叩くとバネの反動で余計に吹っ飛ぶ。
+- **アメとムチの駆け引き**: ホースで太らせるほど殴る得点と飛距離が伸びるが、太らせすぎ・給水のしすぎは時間のロスになる。
+- **壁ドン＆コンボ**: フェンスに叩きつける壁ドン、連続ヒットのコンボ、水分MAX時の「破裂ぶっとび」でスコアを稼ぐ。結果はXにポスト可能。
 
 ---
 

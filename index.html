@@ -674,11 +674,11 @@
     <!-- フィルター＆並び順バー -->
     <div class="controls-bar">
       <div class="filter-bar" role="tablist" aria-label="ジャンルフィルター">
-        <button class="filter-btn active" data-filter="all">すべて表示 (6)</button>
+        <button class="filter-btn active" data-filter="all">すべて表示 (7)</button>
         <button class="filter-btn" data-filter="rpg">👾 ネームバトル / RPG (1)</button>
         <button class="filter-btn" data-filter="battle">⚔️ 3D物理バトル (2)</button>
         <button class="filter-btn" data-filter="science">⚛️ 科学・宇宙シミュレーション (2)</button>
-        <button class="filter-btn" data-filter="action">⚡ アクション・サバイバー (1)</button>
+        <button class="filter-btn" data-filter="action">⚡ アクション・サバイバー (2)</button>
       </div>
       <div class="sort-indicator">
         🕒 並び順：<strong>最新アップデート順 (Latest Commit)</strong>
@@ -900,6 +900,41 @@
           </div>
         </div>
       </article>
+      <!-- 6. かぶくんコンテスト (kabu-contest) -->
+      <article class="game-card" data-repo="kabu-contest" data-category="action" style="--card-accent: rgba(56, 189, 248, 0.55); --card-glow: rgba(56, 189, 248, 0.25);">
+        <div class="card-banner" style="background: linear-gradient(135deg, #082f49 0%, #0369a1 55%, #38bdf8 100%);">
+          <span class="banner-tag">3D物理 / スコアアタック</span>
+          <span class="banner-update-badge" data-role="update-badge">🕒 更新確認中...</span>
+          <div class="banner-icon">🌱</div>
+        </div>
+        <div class="card-body">
+          <h2 class="game-title">かぶくんコンテスト</h2>
+          <div class="game-subtitle" style="color: #38bdf8;">Kabukun Contest — Soft-Body Physics</div>
+          <p class="game-desc">
+            ジェットホースで水を吸わせてかぶくんを太らせ、鎖鉄球フレイルでぶっ飛ばす30秒スコアアタック。水分が多いほど一撃が重く吹っ飛ぶが、殴るたびに水が噴き出して減っていく。ソフトボディのぷるぷる物理が予測不能なぶっとびを生む、カオスな受難系ミニゲーム。
+          </p>
+          <div class="commit-box" data-role="commit-box"></div>
+          <ul class="feature-list">
+            <li>バネ物理でぷるぷる変形するソフトボディかぶくん（潰れた瞬間を叩くとバネで余計に飛ぶ）</li>
+            <li>給水で太らせる「アメ」と、フレイルでぶっ飛ばす「ムチ」の駆け引き</li>
+            <li>壁ドン・コンボ・破裂ぶっとびで稼ぐ30秒スコアアタック（結果をXにポスト可能）</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag">Three.js</span>
+            <span class="tech-tag">独自物理 (Verlet鎖)</span>
+            <span class="tech-tag">Vanilla JS</span>
+            <span class="tech-tag">スマホ対応</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://takenoko117.github.io/kabu-contest/" target="_blank" rel="noopener" class="btn-play">
+              ▶ 今すぐ遊ぶ
+            </a>
+            <a href="https://github.com/takenoko117/kabu-contest" target="_blank" rel="noopener" class="btn-repo" title="GitHub リポジトリ">
+              📦 Repo
+            </a>
+          </div>
+        </div>
+      </article>
     </main>
 
     <footer>
@@ -914,6 +949,18 @@
 
     // ゲーム基本メタデータ＆フォールバック用初期コミット履歴（API制限時でも即座に表示可能）
     const GAME_META = {
+      'kabu-contest': {
+        title: '🌱 かぶくんコンテスト',
+        playUrl: 'https://takenoko117.github.io/kabu-contest/',
+        fallbackCommits: [
+          {
+            sha: '7956dd3',
+            date: '2026-11-20T11:53:55Z',
+            message: '結果画面にXへポストするボタンを追加',
+            url: 'https://github.com/takenoko117/kabu-contest/commit/7956dd3'
+          }
+        ]
+      },
       'Pokemon_like_name_battle': {
         title: '👾 ネームバトラー',
         playUrl: 'https://takenoko117.github.io/Pokemon_like_name_battle/',
